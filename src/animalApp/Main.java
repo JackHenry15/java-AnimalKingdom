@@ -53,20 +53,26 @@ public class Main {
         });
         System.out.println(animalList);
         //sort based on move
-        // System.out.println("sort alphabetically");
-
+        System.out.println("sort based on move");
+        animalList.sort((a1, a2) -> {
+            return a1.getMove().compareTo(a2.getMove());
+        });
+        System.out.println(animalList);
         //list only breathe=lungs
-        // System.out.println("sort alphabetically");
-
+        System.out.println("List only lungs breathing animals");
+        printFilterAnimals(animalList, (a) -> a.getBreath() == "Lungs");
         //list breathe=lungs & 1758
-        // System.out.println("sort alphabetically");
-
+        System.out.println("List lung breathing and yearNamed 1758");
+        printFilterAnimals(animalList, (a) -> (a.getBreath() == "Lungs") && (a.getYearNamed() == 1758));
         //list reproduction=eggs and breathe = lungs
-        // System.out.println("sort alphabetically");
-
+        System.out.println("List reproduction eggs and breathing lungs");
+        printFilterAnimals(animalList, (a) -> (a.getReproduction() == "Eggs") && (a.getBreath() == "Lungs"));
         //list alphabetically by name, yearNamed=1758
-        // System.out.println("sort alphabetically");
-
+        System.out.println("sort alphabetically & yearNamed 1758");
+        animalList.sort((a1, a2) -> {
+            return a1.getName().compareTo(a2.getName());
+        });
+        printFilterAnimals(animalList, (a) -> a.getYearNamed() == 1758);
         // printFilterAnimals(animalList, (a) -> a.get);
 
     }
